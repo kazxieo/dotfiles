@@ -1,0 +1,112 @@
+{
+    "height": 45,
+    "layer": "top",
+    "position": "top",
+    "output": "eDP-1",
+    "spacing": 7,
+    "modules-left": ["custom/launcher", "cpu", "temperature", "custom/dunst"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["pulseaudio", "network", "battery", "clock", "custom/powermenu"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+    },
+    
+    "custom/launcher": {
+        "interval": "once",
+        "format": "",
+        "on-click": "~/.config/rofi/launchers/type-2/launcher.sh",
+        "tooltip": false
+      },
+
+    "cpu": {
+      "interval": 10,
+      "format": "  {usage}%",
+      "max-length": 10
+    },
+
+    "temperature": {
+        "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+	"input-filename": "temp1_input",
+	"format": " {temperatureC}°C",
+	"on-click": "psensor"
+    },
+
+    "custom/dunst": {
+        "exec": "~/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1,
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "婢",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click-right": "pavucontrol",
+	    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "network": {
+        "format-wifi": "直 {signalStrength}%",
+        "format-ethernet": " wired",
+        "format-disconnected": "睊 ",
+        "on-click": "sh ~/.config/wofi/wifimenu.sh"
+    },
+
+    "battery": {
+      "bat": "BAT1",
+      "adapter": "ACAD1",
+      "interval": 60,
+      "states": {
+          "warning": 30,
+          "critical": 15
+      },
+      "max-length": 20,
+      "format": "{icon} {capacity}%",
+      "format-warning": "{icon} {capacity}%",
+      "format-critical": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-alt": "{icon} {time}",
+      "format-full": " {capacity}%",
+      "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    "clock": {
+        "format-alt": "<span> </span> {:%a %b %d}",
+        "format": "<span> </span> {:%I:%M %p}"
+    },
+
+    "custom/powermenu": {
+        "format": "",
+        "on-click": "bash ~/.config/rofi/powermenu/type-2/powermenu.sh",
+        "tooltip": false
+    }
+}
