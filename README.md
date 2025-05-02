@@ -10,14 +10,16 @@ Also note that the customization of all apps is in early state and may have seve
 ## Apps Customized
 
 - Alacritty
-- BetterLockScreen
 - Cava
 - Dunst
 - Fastfetch
-- i3wm
-- Neofetch
+- i3wm ( I don't really use i3 anymore though )
+- Hyprland
+- Waybar
+- Fastfetch
 - Neovim
 - Picom
+- Rofi
 - Polybar
 - Starship
 - Themes( for thunar file manager )
