@@ -111,6 +111,7 @@ bindkey '^[[1;5D' backward-word
 
 # Aliases
 alias tmux="tmux -u"
+alias wayv="wayvibes ~/mechvibes_custom/KeychronK4 -v 1 > /dev/null 2>&1 & disown"
 
 # Add go bin directory to path
 export PATH="$HOME/go/bin:$PATH"
