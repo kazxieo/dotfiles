@@ -78,6 +78,16 @@ export FZF_ALT_C_COMMAND="fd --hidden --exclude .git --type d . $HOME"
 export FZF_CTRL_T_OPTS="--bind 'enter:execute(nvim {} > /dev/tty)'"
 export FZF_ALT_C_OPTS="--bind 'enter:execute(nvim {} > /dev/tty)'"
 
+# Go
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
+
+# Zig
+export PATH="/home/kaz/.zig:$PATH"
+
+# Pager
+export PAGER=more
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -109,3 +119,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias update-mirrors="sudo reflector --verbose --country 'India' -l 10 --sort rate --save /etc/pacman.d/mirrorlist"
+alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
+
+. "$HOME/.local/bin/env"
